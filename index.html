@@ -28,6 +28,13 @@
         }
 
         .carousel-control {
+            position: fixed; /* Fix the navigation controls to the screen */
+            top: 50%; /* Center them vertically */
+            transform: translateY(-50%); /* Adjust position to exactly center */
+            z-index: 1000; /* Ensure they are on top of other content */
+            color: #00A6D6;
+            background-image: none !important;
+            filter: none !important;
             width: 10%;
         }
 
