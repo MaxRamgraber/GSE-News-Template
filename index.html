@@ -1,161 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <title>News Reel</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic News Reel</title>
   <style>
     body {
-      background-color: transparent;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
     }
-
-    .carousel-caption {
-      text-shadow: 0px 0px 8px rgba(0, 0, 0, 1);
-      color: #fff;
+    .news-reel {
+      padding: 20px;
     }
-
-    .carousel-control.left,
-    .carousel-control.right {
-      color: #295c79;
-      background-image: none !important;
-      filter: none !important;
+    .news-item {
+      margin-bottom: 20px;
     }
-
-    .carousel-control {
-      width: 10%;
+    .news-item h2 {
+      margin: 0 0 10px;
     }
-
-    .carousel .carousel-indicators li {
-      border: none;
-      background-color: #152d3b;
+    .news-item p {
+      margin: 0;
     }
-
-    .carousel .carousel-indicators li.active {
-      border: none;
-      background-color: #4794c1;
+    .navigation {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
     }
-
-    h2 {
-      color: #295c79;
-      font-family: 'Open Sans', sans-serif;
-      font-size: 120%;
-      font-weight: 700;
-      line-height: 100%;
-      margin-bottom: 2%;
-    }
-
-    h3 {
-      color: darkgrey;
-      font-family: 'Open Sans', sans-serif;
-      font-size: 120%;
-      line-height: 100%;
-      margin-bottom: 2%;
-    }
-
-    p {
-      color: #152d3b;
-      font-family: 'Open Sans', sans-serif;
-      font-size: 100%;
-    }
-
-    .grid {
-      height: 100vh;
-      width: 100vw;
-      overflow-y: auto;
-      text-align: justify;
-      text-justify: inter-word;
-      font-family: Helvetica;
-      font-size: 100%;
-      padding: 10%;
-      -ms-overflow-style: none;
-      scrollbar-width: none;
-      -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 70%, rgba(91.8, 93.7, 94.9, 0));
-      mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(91.8, 93.7, 94.9, 1));
-    }
-
-    .grid::-webkit-scrollbar {
-      display: none;
+    .navigation button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
     }
   </style>
 </head>
-
 <body>
-  <div id="myCarousel" class="carousel slide" data-interval="false">
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    </ol>
-    <div class="carousel-inner">
-      <div class="item active">
-        <div class="grid">
-          <h3>January 2025</h3>
-          <h2>Dynamic News Loading</h2>
-          <p>This section will now load news articles dynamically via JavaScript. By fetching articles from an external source or API, we can ensure the latest updates are displayed without manually editing the code. Below is a demonstration:</p>
-        </div>
-      </div>
+  <div class="news-reel">
+    <div class="news-item" id="news-january-2025">
+      <h2>January 2025</h2>
+      <p>Happy New Year! Here's to a wonderful 2025.</p>
     </div>
-    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left"></span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right"></span>
-    </a>
+  </div>
+
+  <div class="navigation">
+    <button id="prev-btn">Previous</button>
+    <button id="next-btn">Next</button>
   </div>
 
   <script>
-    // Example function to load news articles dynamically
-    const newsArticles = [
-      {
-        date: 'July 2024',
-        title: 'NWO Career Grant | Veni',
-        content: 'I am very happy to announce that my Veni project ASCEND (Advancing Subsurface Characterization via Ensemble Nonlinear Data assimilation) has been granted! More details to follow.'
-      },
-      {
-        date: 'May 2024',
-        title: 'Updated Section Website',
-        content: 'As part of my services for the university, I have redesigned the reservoir engineering section website. Check it out for updates on our research!'
-      }
+    const newsData = [
+      { id: 'news-december-2024', title: 'December 2024', content: 'Reflecting on a fantastic year.' },
+      { id: 'news-november-2024', title: 'November 2024', content: 'Thanksgiving celebrations abound.' },
+      { id: 'news-october-2024', title: 'October 2024', content: 'Halloween fun for everyone.' }
     ];
 
-    function loadArticles() {
-      const carouselInner = document.querySelector('.carousel-inner');
-      const indicators = document.querySelector('.carousel-indicators');
+    let currentIndex = 0;
+    const newsReel = document.querySelector('.news-reel');
 
-      newsArticles.forEach((article, index) => {
-        const isActive = index === 0 ? 'active' : '';
+    function loadNews(index) {
+      // Clear current news
+      newsReel.innerHTML = '';
 
-        const indicator = document.createElement('li');
-        indicator.setAttribute('data-target', '#myCarousel');
-        indicator.setAttribute('data-slide-to', index.toString());
-        if (isActive) indicator.classList.add('active');
-        indicators.appendChild(indicator);
+      // Add the new article dynamically
+      const newsItem = document.createElement('div');
+      newsItem.classList.add('news-item');
+      newsItem.id = newsData[index].id;
 
-        const itemDiv = document.createElement('div');
-        itemDiv.classList.add('item', isActive);
+      const newsTitle = document.createElement('h2');
+      newsTitle.textContent = newsData[index].title;
 
-        const gridDiv = document.createElement('div');
-        gridDiv.classList.add('grid');
+      const newsContent = document.createElement('p');
+      newsContent.textContent = newsData[index].content;
 
-        const h3 = document.createElement('h3');
-        h3.textContent = article.date;
-        const h2 = document.createElement('h2');
-        h2.textContent = article.title;
-        const p = document.createElement('p');
-        p.textContent = article.content;
-
-        gridDiv.appendChild(h3);
-        gridDiv.appendChild(h2);
-        gridDiv.appendChild(p);
-        itemDiv.appendChild(gridDiv);
-        carouselInner.appendChild(itemDiv);
-      });
+      newsItem.appendChild(newsTitle);
+      newsItem.appendChild(newsContent);
+      newsReel.appendChild(newsItem);
     }
 
-    document.addEventListener('DOMContentLoaded', loadArticles);
+    document.getElementById('prev-btn').addEventListener('click', () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        loadNews(currentIndex);
+      }
+    });
+
+    document.getElementById('next-btn').addEventListener('click', () => {
+      if (currentIndex < newsData.length - 1) {
+        currentIndex++;
+        loadNews(currentIndex);
+      }
+    });
+
+    // Load initial news
+    loadNews(currentIndex);
   </script>
 </body>
-
 </html>
