@@ -81,15 +81,17 @@
             mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(91.8, 93.7, 94.9, 1));
         }
 
-        .grid p img {
-            float: left; /* or right */
-            margin-right: 15px; /* space between the image and the text */
-            max-width: 30%; /* adjust size if needed */
-            height: auto;
+        .grid p {
+            display: flex;
+            align-items: center; /* Vertically align the image and text */
+            gap: 15px; /* Space between image and text */
+            flex-direction: row-reverse; /* This makes the image come after the text */
         }
         
-        .grid p {
-            overflow: hidden; /* clear floats */
+        .grid p img {
+            max-width: 30%; /* Adjust this depending on how much space you want for the image */
+            height: auto;
+            object-fit: contain; /* Maintain aspect ratio */
         }
 
         .grid::-webkit-scrollbar {
