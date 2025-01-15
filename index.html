@@ -1,72 +1,68 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
-
-  <title>News reel</title>
-
+  <title>News Reel</title>
   <meta charset="utf-8">
-
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
-
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
   <style>
-  
     body {
       background-color: transparent;
     }
 
-    .carousel-caption {text-shadow:0px 0px 8px rgba(0,0,0,1);color:#fff;}
-    
-    .carousel-control.left, .carousel-control.right {
-       color: #295c79;
-       background-image:none !important;
-       filter:none !important;
+    .carousel-caption {
+      text-shadow: 0px 0px 8px rgba(0, 0, 0, 1);
+      color: #fff;
     }
-    
+
+    .carousel-control.left,
+    .carousel-control.right {
+      color: #295c79;
+      background-image: none !important;
+      filter: none !important;
+    }
+
     .carousel-control {
-    width: 10%;/*put your desired width*/
+      width: 10%;
     }
-    
+
     .carousel .carousel-indicators li {
       border: none;
-      background-color: #152d3b;}
+      background-color: #152d3b;
+    }
+
     .carousel .carousel-indicators li.active {
       border: none;
-      background-color: #4794c1;}
+      background-color: #4794c1;
+    }
 
     h2 {
       color: #295c79;
-      font-family: Open Sans;
+      font-family: 'Open Sans', sans-serif;
       font-size: 120%;
       font-weight: 700;
       line-height: 100%;
       margin-bottom: 2%;
-      margin-top: 0px;
     }
+
     h3 {
       color: darkgrey;
-      font-family: Open Sans;
+      font-family: 'Open Sans', sans-serif;
       font-size: 120%;
       line-height: 100%;
       margin-bottom: 2%;
-      margin-top: 0px;
     }
+
     p {
       color: #152d3b;
-      font-family: Open Sans;
+      font-family: 'Open Sans', sans-serif;
       font-size: 100%;
     }
 
-    .grid { 
+    .grid {
       height: 100vh;
       width: 100vw;
       overflow-y: auto;
@@ -74,263 +70,92 @@
       text-justify: inter-word;
       font-family: Helvetica;
       font-size: 100%;
-      grid-area: s2;
       padding: 10%;
-      -ms-overflow-style: none;  /* Internet Explorer 10+ */
-      scrollbar-width: none;  /* Firefox */
-      /*background-color: #00FF36;*/
-      /* -webkit-mask-image: linear-gradient(to bottom, black 70%, from(rgba(41, 92, 121,1), to(rgba(41, 92, 121,0.1)));*/
+      -ms-overflow-style: none;
+      scrollbar-width: none;
       -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 70%, rgba(91.8, 93.7, 94.9, 0));
-      mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(91.8, 93.7, 94.9,1);
+      mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(91.8, 93.7, 94.9, 1));
+    }
+
     .grid::-webkit-scrollbar {
       display: none;
     }
-    .grid::-webkit-scrollbar { 
-        display: none;  /* Safari and Chrome */
-    }
-
   </style>
-
 </head>
 
 <body>
-
-<div id="myCarousel" class="carousel slide lazy" data-interval="false">
-
-  <!-- Indicators -->
-
-
-  <!-- Add a new li here if I add a new item -->
-  <ol class="carousel-indicators">
-    
-    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#myCarousel" data-slide-to="1"></li>
-    <li data-target="#myCarousel" data-slide-to="2"></li>
-    <li data-target="#myCarousel" data-slide-to="3"></li>
-    <li data-target="#myCarousel" data-slide-to="4"></li>
-    <li data-target="#myCarousel" data-slide-to="5"></li>
-    <li data-target="#myCarousel" data-slide-to="6"></li>
-    <li data-target="#myCarousel" data-slide-to="7"></li>
-    <li data-target="#myCarousel" data-slide-to="8"></li>
-    <li data-target="#myCarousel" data-slide-to="9"></li>
-    
-  </ol>
-
-
-  <!-- Wrapper for slides -->
-
-  <div class="carousel-inner" background-color: "lightblue">
-  
-    <div class="item active">
-
-      <div class="grid">
-          <h3>July 2024</h3>
-          <h2>NWO Career grant | Veni</h2>
-          <p>I am very happy to announce that my Veni project ASCEND (<b>A</b>dvancing <b>S</b>ubsurface <b>C</b>haracterization via <b>E</b>nsemble <b>N</b>onlinear <b>D</b>ata assimilation) has been granted! In this project, I will research adaptation and localization strategies that can render ensemble transport filters significantly more efficient. This will yield more reliable subsurface characterizations, which will improve the safety and efficiency of many important operations for the energy transition, from geothermal engineering to hydrogen storage. I am also currently hiring a PhD on related topics. If you are interested, or know someone who may be, click <a href="https://www.tudelft.nl/over-tu-delft/werken-bij-tu-delft/vacatures/details?jobId=18151">here</a>. </p>
+  <div id="myCarousel" class="carousel slide" data-interval="false">
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="item active">
+        <div class="grid">
+          <h3>January 2025</h3>
+          <h2>Dynamic News Loading</h2>
+          <p>This section will now load news articles dynamically via JavaScript. By fetching articles from an external source or API, we can ensure the latest updates are displayed without manually editing the code. Below is a demonstration:</p>
+        </div>
       </div>
-
     </div>
-  
-    <div class="item">
-
-      <div class="grid">
-          <h3>July 2024</h3>
-          <h2>PhD vacancy on Nonlinear Data Assimilation</h2>
-          <p>I am hiring! Are you passionate about advancing the energy transition? Are you curious about methods that will help us to learn more about the subsurface? Together with my colleagues Berent Lunde and Femke Vossepoel, I am looking for a motivated PhD student to join our project on adaptive nonlinear data assimilation in subsurface systems. In this collaboration between Delft University of Technology and Equinor, we will develop an exciting new framework to improve our understanding of complex subsurface environments, crucial for safe drinking water, geothermal energy, and hydrogen storage. If you are interested, or know someone who may be, click <a href="https://www.tudelft.nl/over-tu-delft/werken-bij-tu-delft/vacatures/details?jobId=18151">here</a>. </p>
-      </div>
-
-    </div>
-
-    <div class="item">
-
-      <div class="grid">
-          <h3>May 2024</h3>
-          <h2>Updated section website</h2>
-          <p>As part of my services for the university, I have volunteered to re-design the website of the reservoir engineering section, which I joined as an assistant professor last August. The update was long overdue, and now it better reflects our latest research into the energy transition. If you are curious, you can check out the website <a href="https://www.tudelft.nl/citg/over-faculteit/afdelingen/geoscience-engineering/sections/reservoir-engineering">here</a>. </p>
-      </div>
-
-    </div>
-
-    <div class="item">
-
-      <div class="grid">
-          <h3>March 2024</h3>
-          <h2>Poster at NWO NAC 2024</h2>
-          <p>This year, I will attend the NWO NAC in Utrecht (Netherland's main geoscience conference) for the first time. I am looking forward to meet the wider geoscience community here in the Netherlands. Since the statistical nature of my postdoctoral research might be a bit out-of-scope for a geoscience conference, I will present a poster that introduces triangular transport for nonlinear data assimilation. If you are interested, you can check out the poster <a href="https://www.maxramgraber.com/posters">here</a>. </p>
-      </div>
-
-    </div>
-  
-    <div class="item">
-
-      <div class="grid">
-          <h3>February 2024</h3>
-          <h2>New interactive elements</h2>
-          <p>To support my new teaching commitments at TU Delft, I have created two new interactive web-based elements that might help illustrating a few important topics in statistics and linear algebra. <a href="https://www.maxramgraber.com/copula-sandbox">The first</a> shows different <a href="https://en.wikipedia.org/wiki/Copula_(probability_theory)">copulas</a>, and demonstrates how changing their coefficients affects the copula shape. <a href="https://www.maxramgraber.com/linear-transformation">The second</a> shows how changing the entries of a 2-by-2 matrix affects the resulting linear transformation. Check them out if you are curious, and let me know if you find them useful, run into bugs, or have suggestions for improvements.</p>
-      </div>
-
-    </div>
-  
-    <div class="item">
-
-      <div class="grid">
-          <h3>November 2023</h3>
-          <h2>Smoothing manuscripts published</h2>
-          <p>Our two-part manuscript using nonlinear ensemble triangular transport for smoothing has just been published in the open-access Journal of Computational Physics X! If you are curious, you can check out the papers <a href="https://www.sciencedirect.com/science/article/pii/S2590055223000124?via%3Dihub">here</a> and <a href="https://www.sciencedirect.com/science/article/pii/S2590055223000112?via%3Dihub">here</a>. In Part 1, we discuss how many well-known linear smoothing algorithms emerge as special cases of a general ensemble transport smoother. In Part 2, we discuss generalizations to nonlinear smoothing updates, and demonstrate their performance in nonlinear and chaotic settings. Many thanks to my co-authors Ricardo Baptista (Caltech), Dennis McLaughlin (MIT), and Youssef Marzouk (MIT)! </p>
-      </div>
-
-    </div>
-  
-    <div class="item">
-
-      <div class="grid">
-          <h3>October 2023</h3>
-          <h2>Poster at SimTech 2023</h2>
-          <p>I am presenting my poster <a href="https://www.maxramgraber.com/posters#h.wqihng5nge0v">Triangular map adaptation enables efficient nonlinear data assimilation</a> at the International Conference on Data-Integrated Simulation Science at the University of Stuttgart. In this poster, I am presenting my joint work on triangular map adaptation with Youssef Marzouk. This poster also includes augmented reality elements, so check it out if you are curious! </p>
-      </div>
-
-    </div>
-
-    <div class="item">
-
-      <div class="grid">
-          <h3>May 2023</h3>
-          <h2>Assistant professor at TU Delft</h2>
-          <p>I am excited to announce that I will be joining <a href="https://www.tudelft.nl/">TU Delft</a> as a tenure-track assistant professor this August. As part of the <a href="https://www.tudelft.nl/en/ceg/about-faculty/departments/geoscience-engineering/sections/reservoir-engineering">Reservoir Engineering Section</a> of the Department of Geoscience and Engineering, I will continue my research into nonlinear parameter estimation, uncertainty quantification, and data assimilation methods for hydrogeology and other subsurface systems. I am looking forward to the opportunity to advance my recent methodological research at MIT into environmental application, and to contribute to the exciting research within the department and beyond! </p>
-      </div>
-
-    </div>
-    
-    <div class="item">
-
-      <div class="grid">
-          <h3>May 2023</h3>
-          <h2>EnKF Workshop in Norheimsund</h2>
-          <p>I have just returned from the <a href="https://www.data-assimilation.no/workshops/EnKF-WS-2023">2023 EnKF Workshop</a> in Norheimsund, Norway. During that workshop, I present my recent work on the efficient adaptation of nonlinear transport maps both as an oral talk and an accompanying poster. In brief, our methods allow us to find efficient and parsimonious transport maps for nonlinear data assimilation, which furthermore reveal and exploit conditional independence structure in the system. This permits a very efficient form of adaptive localization. My poster and a recording of my talk can be found in the corresponding sections of my website. I met many interesting people and learned a lot about different areas of data assimilation research at that conference, and can only recommend attending!<br><br> <img style='height: 100%; width: 100%; object-fit: contain' src="https://drive.google.com/uc?export=download&id=1ySsQgoYAT6ggWltN_Rxtizfp_r6hO8Lu"> </p>
-      </div>
-
-    </div>
-    
-    <div class="item">
-
-      <div class="grid">
-          <h3>November 2022</h3>
-          <h2>Ensemble transport smoothing</h2>
-          <p>The pre-prints for my twinned manuscripts about ensemble transport smoothers (EnTS) are now available on arXiv! In <a href="https://arxiv.org/abs/2210.17000">Part 1</a> we introduce the general algorithm, and demonstrate how different existing smoothing algorithms arise as linear special cases of a general nonlinear EnTS. In <a href="https://arxiv.org/abs/2210.17435">Part 2</a>, we explore its performance in various nonlinear and chaotic test cases, and match or outperform existing state-of-the-art smoothing algorithms. This work in collaboration with Ricardo Baptista (Caltech), Dennis McLaughlin (MIT), and Youssef Marzouk (MIT) is currently under review in the Journal of Computational Physics. You can access the preprints by following the links above.<br><br><br></p>
-      </div>
-
-    </div>
-
-    <div class="item">
-
-      <div class="grid">
-          <h3>July 2022</h3>
-          <h2>Talk at SIAM Annual 2022</h2>
-          <p>I presented the theoretical section on <a href="https://www.maxramgraber.com/talks#h.si1d7gb00qbf">An Introduction to Sampling with Measure Transport</a> in a one-hour workshop organized together with Matthew Parno (Dartmouth), Ricardo Baptista (MIT), Paul-Baptiste Rubio (MIT), and Youssef Marzouk (MIT). After an introduction to triangular transport methods, Matthew guided the students through a hands-on exercises using the newly developed <a href="https://github.com/MeasureTransport/MParT">MPartT toolbox</a>. The exercises used in the workshop can be accessed <a href="https://github.com/MeasureTransport/SIAMannual22">here</a>. You can find the recording of this presentation in the "Talks" section of this webpage, or by following the link above.<br><br><br></p>
-      </div>
-
-    </div>
-    
-    <div class="item">
-    
-      <div class="grid">
-          <h3>June 2022</h3>
-          <h2>Talk at ISDA 2022</h2>
-          <p>I visited the International Symposium on Data Assimilation to give a talk about my work on <a href="https://youtu.be/2PirLQndSwQ ">Ensemble smoothing with transport maps</a>, a shorter version of my talk at SIAM UQ. I provided a short introduction to transport methods, then discussed ways in which they can be exploited to implement nonlinear ensemble-based smoothing. You can find a recording of this presentation in the "Talks" section of this webpage, or by following the link above.<br><br><br></p>
-      </div>
-      
-    </div>
-    
-    <div class="item">
-    
-      <div class="grid">
-          <h3>April 2022</h3>
-          <h2>Talk at SIAM UQ 2022</h2>
-          <p>I have presented my work on <a href="https://www.youtube.com/watch?v=CArcBrirOEg">Ensemble smoothing with transport maps</a> in person at SIAM UQ 2022 in Atlanta. I provided a short introduction to transport methods, then discussed ways in which they can be exploited to implement nonlinear ensemble-based smoothing. You can find a recording of my talk on the "Talks" section of this webpage, or by following the link above. <br><br><br></p>
-      </div>
-      
-    </div>
-    
-    <div class="item">
-
-      <div class="grid">
-          <h3>November 2021</h3>
-          <h2>Prix Léon Du Pasquier et Louis Perrier</h2>
-          <p>I am very honoured to announce that my dissertation has been awarded the Prix Léon Du Pasquier et Louis Perrier, an annual award for a single, excellent dissertation within the faculty of science of University of Neuchâtel. The award is endowed with a prize money of 2000,- CHF. I want to thank my doctoral defence committee for nominating my thesis for this award! <br><br> <img style='height: 100%; width: 100%; object-fit: contain' src="https://drive.google.com/uc?export=download&id=12onG4d2uM5gUbOTQVYy2o_dUHIvG9bhw"> <br><br><br></p>
-      </div>
-
-    </div>
-    
-    <div class="item">
-    
-      <div class="grid">
-          <h3>October 2021</h3>
-          <h2>Poster at AGU Fall meeting 2021</h2>
-          <p>I will present some of my work at MIT as a <a href="https://agu.confex.com/agu/fm21/webprogrampreliminary/Paper941401.html">poster</a> in the session on <a href="https://agu.confex.com/agu/fm21/webprogrampreliminary/Session118287.html">Advances in Data Assimilation, Predictability and Uncertainty Quantification</a> at the AGU Fall Meeting in New Orleans this December. This poster will cover the use of transport maps for smoothing, a data assimilation technique similar to filtering, which extends the inference update back to all previous states as well. We find that transport maps offer a unifying perspective on smoothing, from which diverse linear smoothing algorithms can be derived as special cases. We also report nonlinear smoothing results, and show that when it comes to nonlinearity, not all linear smoothers translate equally well to their nonlinear transport extensions. <br><br><br></p>
-      </div>
-      
-    </div>
-
-
-    <div class="item">
-    
-      <div class="grid">
-          <h3>June 2021</h3>
-          <h2>Möbius</h2>
-          <p>My lockdown side-project has <a href="https://www.maxramgraber.com/publications#h.wt2o7q6xyjmv">just been published</a> in Water Resources Research! In this manuscript, we explore the analytic element method, a highly-efficient, grid-free groundwater modelling technique based on complex algebra. We expanded the set of classic analytic elements with a regional flow element based on a Möbius transformation, which allows us to induce curving, diverging, and converging regional flow without the need for conventional boundary conditions.<br><br>The manuscript comes with a <a href="https://www.maxramgraber.com/software#h.fd3bax1tl5dc">Python toolbox</a> which permits the modular assembly of an analytic element model, with all the more nasty math happening behind the scenes. This toolbox also has an in-build uncertainty quantification routine based on Differential Evolution Monte Carlo.<br><br><br></p>
-          
-      </div>
-
-    </div>
-
-
-    <div class="item">
-
-      <div class="grid">
-          <h3>May 2021</h3>
-          <h2>A homepage</h2>
-          <p>Welcome to my new homepage! Here you will find diverse posters, presentations, publications, and software tools I have created over the course of my acacademic carreer. Should you have any questions concerning my research or encounter any bugs on this site (quite likely, I attempted a lot of Javascript and HTML magic), please do not hesitate to let me know.<br><br><br></p>
-          
-      </div>
-
-    </div>
-    
-    <div class="item">
-
-      <div class="grid">  
-          <h3>January 2021</h3>
-          <h2>Postdoc at MIT</h2>
-          <p>I have recently started my postdoctoral studies at MIT. I am jointly hosted by Prof. Youssef Marzouk from the Department of Aeronautics and Astronautics and Prof. Dennis McLaughlin from the Department of Civil and Environmental Engineering. In the course of this project, we will develop efficient techniques for non-linear data assimilation based on transport methods. Ultimately, we will hope to explore their application in the context of environmental science applications.<br><br><br></p>
-      </div>
-
-    </div>
-
-
-
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
   </div>
 
+  <script>
+    // Example function to load news articles dynamically
+    const newsArticles = [
+      {
+        date: 'July 2024',
+        title: 'NWO Career Grant | Veni',
+        content: 'I am very happy to announce that my Veni project ASCEND (Advancing Subsurface Characterization via Ensemble Nonlinear Data assimilation) has been granted! More details to follow.'
+      },
+      {
+        date: 'May 2024',
+        title: 'Updated Section Website',
+        content: 'As part of my services for the university, I have redesigned the reservoir engineering section website. Check it out for updates on our research!'
+      }
+    ];
 
-  <!-- Left and right controls -->
+    function loadArticles() {
+      const carouselInner = document.querySelector('.carousel-inner');
+      const indicators = document.querySelector('.carousel-indicators');
 
-  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      newsArticles.forEach((article, index) => {
+        const isActive = index === 0 ? 'active' : '';
 
-    <span class="glyphicon glyphicon-chevron-left"></span>
+        const indicator = document.createElement('li');
+        indicator.setAttribute('data-target', '#myCarousel');
+        indicator.setAttribute('data-slide-to', index.toString());
+        if (isActive) indicator.classList.add('active');
+        indicators.appendChild(indicator);
 
-    <span class="sr-only">Previous</span>
+        const itemDiv = document.createElement('div');
+        itemDiv.classList.add('item', isActive);
 
-  </a>
+        const gridDiv = document.createElement('div');
+        gridDiv.classList.add('grid');
 
-  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+        const h3 = document.createElement('h3');
+        h3.textContent = article.date;
+        const h2 = document.createElement('h2');
+        h2.textContent = article.title;
+        const p = document.createElement('p');
+        p.textContent = article.content;
 
-    <span class="glyphicon glyphicon-chevron-right"></span>
+        gridDiv.appendChild(h3);
+        gridDiv.appendChild(h2);
+        gridDiv.appendChild(p);
+        itemDiv.appendChild(gridDiv);
+        carouselInner.appendChild(itemDiv);
+      });
+    }
 
-    <span class="sr-only">Next</span>
-
-  </a>
-
-</div>
-
-
+    document.addEventListener('DOMContentLoaded', loadArticles);
+  </script>
 </body>
 
 </html>
