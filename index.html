@@ -1,98 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dynamic News Reel</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-    .news-reel {
-      padding: 20px;
-    }
-    .news-item {
-      margin-bottom: 20px;
-    }
-    .news-item h2 {
-      margin: 0 0 10px;
-    }
-    .news-item p {
-      margin: 0;
-    }
-    .navigation {
-      margin-top: 20px;
-      display: flex;
-      justify-content: space-between;
-    }
-    .navigation button {
-      padding: 10px 20px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-  </style>
+    <title>News reel</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <style>
+        body {
+            background-color: transparent;
+        }
+
+        .carousel-caption {
+            text-shadow: 0px 0px 8px rgba(0, 0, 0, 1);
+            color: #fff;
+        }
+
+        .carousel-control.left,
+        .carousel-control.right {
+            color: #295c79;
+            background-image: none !important;
+            filter: none !important;
+        }
+
+        .carousel-control {
+            width: 10%;
+        }
+
+        .carousel .carousel-indicators li {
+            border: none;
+            background-color: #152d3b;
+        }
+
+        .carousel .carousel-indicators li.active {
+            border: none;
+            background-color: #4794c1;
+        }
+
+        h2 {
+            color: #295c79;
+            font-family: Open Sans;
+            font-size: 120%;
+            font-weight: 700;
+            line-height: 100%;
+            margin-bottom: 2%;
+            margin-top: 0px;
+        }
+
+        h3 {
+            color: darkgrey;
+            font-family: Open Sans;
+            font-size: 120%;
+            line-height: 100%;
+            margin-bottom: 2%;
+            margin-top: 0px;
+        }
+
+        p {
+            color: #152d3b;
+            font-family: Open Sans;
+            font-size: 100%;
+        }
+
+        .grid {
+            height: 100vh;
+            width: 100vw;
+            overflow-y: auto;
+            text-align: justify;
+            text-justify: inter-word;
+            font-family: Helvetica;
+            font-size: 100%;
+            grid-area: s2;
+            padding: 10%;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+            -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 70%, rgba(91.8, 93.7, 94.9, 0));
+            mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(91.8, 93.7, 94.9, 1));
+        }
+
+        .grid::-webkit-scrollbar {
+            display: none;
+        }
+
+        .grid::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
 </head>
+
 <body>
-  <div class="news-reel">
-    <div class="news-item" id="news-january-2025">
-      <h2>January 2025</h2>
-      <p>Happy New Year! Here's to a wonderful 2025.</p>
+
+    <div id="myCarousel" class="carousel slide lazy" data-interval="false">
+
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="3"></li>
+            <li data-target="#myCarousel" data-slide-to="4"></li>
+            <li data-target="#myCarousel" data-slide-to="5"></li>
+            <li data-target="#myCarousel" data-slide-to="6"></li>
+            <li data-target="#myCarousel" data-slide-to="7"></li>
+            <li data-target="#myCarousel" data-slide-to="8"></li>
+            <li data-target="#myCarousel" data-slide-to="9"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" background-color: "lightblue">
+
+            <div class="item active">
+                <div class="grid">
+                    <h3>July 2024</h3>
+                    <h2>NWO Career grant | Veni</h2>
+                    <p>I am very happy to announce that my Veni project ASCEND (<b>A</b>dvancing <b>S</b>ubsurface <b>C</b>haracterization via <b>E</b>nsemble <b>N</b>onlinear <b>D</b>ata assimilation) has been granted! In this project, I will research adaptation and localization strategies that can render ensemble transport filters significantly more efficient. This will yield more reliable subsurface characterizations, which will improve the safety and efficiency of many important operations for the energy transition, from geothermal engineering to hydrogen storage. I am also currently hiring a PhD on related topics. If you are interested, or know someone who may be, click <a href="https://www.tudelft.nl/over-tu-delft/werken-bij-tu-delft/vacatures/details?jobId=18151">here</a>.</p>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="grid">
+                    <h3>July 2024</h3>
+                    <h2>PhD vacancy on Nonlinear Data Assimilation</h2>
+                    <p>I am hiring! Are you passionate about advancing the energy transition? Are you curious about methods that will help us to learn more about the subsurface? Together with my colleagues Berent Lunde and Femke Vossepoel, I am looking for a motivated PhD student to join our project on adaptive nonlinear data assimilation in subsurface systems. In this collaboration between Delft University of Technology and Equinor, we will develop an exciting new framework to improve our understanding of complex subsurface environments, crucial for safe drinking water, geothermal energy, and hydrogen storage. If you are interested, or know someone who may be, click <a href="https://www.tudelft.nl/over-tu-delft/werken-bij-tu-delft/vacatures/details?jobId=18151">here</a>.</p>
+                </div>
+            </div>
+
+            <!-- Additional slides omitted for brevity -->
+        
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+            <span class="sr-only">Next</span>
+        </a>
     </div>
-  </div>
 
-  <div class="navigation">
-    <button id="prev-btn">Previous</button>
-    <button id="next-btn">Next</button>
-  </div>
-
-  <script>
-    const newsData = [
-      { id: 'news-december-2024', title: 'December 2024', content: 'Reflecting on a fantastic year.' },
-      { id: 'news-november-2024', title: 'November 2024', content: 'Thanksgiving celebrations abound.' },
-      { id: 'news-october-2024', title: 'October 2024', content: 'Halloween fun for everyone.' }
-    ];
-
-    let currentIndex = 0;
-    const newsReel = document.querySelector('.news-reel');
-
-    function loadNews(index) {
-      // Clear current news
-      newsReel.innerHTML = '';
-
-      // Add the new article dynamically
-      const newsItem = document.createElement('div');
-      newsItem.classList.add('news-item');
-      newsItem.id = newsData[index].id;
-
-      const newsTitle = document.createElement('h2');
-      newsTitle.textContent = newsData[index].title;
-
-      const newsContent = document.createElement('p');
-      newsContent.textContent = newsData[index].content;
-
-      newsItem.appendChild(newsTitle);
-      newsItem.appendChild(newsContent);
-      newsReel.appendChild(newsItem);
-    }
-
-    document.getElementById('prev-btn').addEventListener('click', () => {
-      if (currentIndex > 0) {
-        currentIndex--;
-        loadNews(currentIndex);
-      }
-    });
-
-    document.getElementById('next-btn').addEventListener('click', () => {
-      if (currentIndex < newsData.length - 1) {
-        currentIndex++;
-        loadNews(currentIndex);
-      }
-    });
-
-    // Load initial news
-    loadNews(currentIndex);
-  </script>
 </body>
+
 </html>
