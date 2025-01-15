@@ -81,6 +81,17 @@
             mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(91.8, 93.7, 94.9, 1));
         }
 
+        .grid p img {
+            float: left; /* or right */
+            margin-right: 15px; /* space between the image and the text */
+            max-width: 30%; /* adjust size if needed */
+            height: auto;
+        }
+        
+        .grid p {
+            overflow: hidden; /* clear floats */
+        }
+
         .grid::-webkit-scrollbar {
             display: none;
         }
@@ -116,7 +127,7 @@
                 <div class="grid">
                     <h3>July 2024</h3>
                     <h2>NWO Career grant | Veni</h2>
-                    <p>I am very happy to announce that my Veni project ASCEND (<b>A</b>dvancing <b>S</b>ubsurface <b>C</b>haracterization via <b>E</b>nsemble <b>N</b>onlinear <b>D</b>ata assimilation) has been granted! In this project, I will research adaptation and localization strategies that can render ensemble transport filters significantly more efficient. This will yield more reliable subsurface characterizations, which will improve the safety and efficiency of many important operations for the energy transition, from geothermal engineering to hydrogen storage. I am also currently hiring a PhD on related topics. If you are interested, or know someone who may be, click <a href="https://www.tudelft.nl/over-tu-delft/werken-bij-tu-delft/vacatures/details?jobId=18151">here</a>.</p>
+                    <p>I am very happy to announce that my Veni project ASCEND (<b>A</b>dvancing <b>S</b>ubsurface <b>C</b>haracterization via <b>E</b>nsemble <b>N</b>onlinear <b>D</b>ata assimilation) has been granted! In this project, I will research adaptation and localization strategies that can render ensemble transport filters significantly more efficient. This will yield more reliable subsurface characterizations, which will improve the safety and efficiency of many important operations for the energy transition, from geothermal engineering to hydrogen storage. I am also currently hiring a PhD on related topics. If you are interested, or know someone who may be, click <a href="https://www.tudelft.nl/over-tu-delft/werken-bij-tu-delft/vacatures/details?jobId=18151">here</a>. Here is also an image <img style='height: 100%; width: 100%; object-fit: contain' src="https://filelist.tudelft.nl/CiTG/Over%20faculteit/Afdelingen/Geoscience%20Engineering/Reservoir%20Engineering/Test/geothermics_small.webp">.</p>
                 </div>
             </div>
 
